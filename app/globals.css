@@ -1,0 +1,262 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 2%;
+    --foreground: 0 0% 98%;
+    --card: 240 10% 8%;
+    --card-foreground: 0 0% 98%;
+    --popover: 0 0% 5%;
+    --popover-foreground: 0 0% 98%;
+    --muted: 240 5% 25%;
+    --muted-foreground: 240 5% 64.9%;
+    --accent: 240 3.7% 15.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 6% 12%;
+    --input: 240 5% 10%;
+    --primary: 264 100% 61%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+    --ring: 264 100% 61%;
+    --radius: 0.5rem;
+    
+    /* Premium color palette */
+    --cyan: 186 100% 50%;
+    --violet: 264 100% 61%;
+    --emerald: 160 84% 39%;
+    --rose: 346 100% 55%;
+    --amber: 38 92% 50%;
+  }
+
+  .dark {
+    --background: 0 0% 2%;
+    --foreground: 0 0% 98%;
+    --card: 240 10% 8%;
+    --card-foreground: 0 0% 98%;
+    --popover: 0 0% 5%;
+    --popover-foreground: 0 0% 98%;
+    --muted: 240 5% 25%;
+    --muted-foreground: 240 5% 64.9%;
+    --accent: 240 3.7% 15.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 6% 12%;
+    --input: 240 5% 10%;
+    --primary: 264 100% 61%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+    --ring: 264 100% 61%;
+    
+    /* Premium color palette */
+    --cyan: 186 100% 50%;
+    --violet: 264 100% 61%;
+    --emerald: 160 84% 39%;
+    --rose: 346 100% 55%;
+    --amber: 38 92% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground antialiased selection:bg-purple-500/30 selection:text-purple-200;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+}
+
+/* Custom background patterns */
+.cyber-grid {
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+}
+
+.radial-glow-violet {
+  background: radial-gradient(circle 800px at 50% -200px, rgba(139, 92, 246, 0.15), transparent 80%);
+}
+
+.radial-glow-cyan {
+  background: radial-gradient(circle 600px at 20% 400px, rgba(6, 182, 212, 0.08), transparent 70%);
+}
+
+.radial-glow-rose {
+  background: radial-gradient(circle 600px at 80% 800px, rgba(244, 63, 94, 0.05), transparent 70%);
+}
+
+/* Premium glassmorphism background animations */
+.shimmer-bg {
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.08) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer-swipe 3s infinite;
+}
+
+@keyframes shimmer-swipe {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+/* Animated gradient backgrounds */
+.gradient-animated {
+  background: linear-gradient(-45deg, rgba(264, 100%, 61%, 0.1), rgba(186, 100%, 50%, 0.05));
+  background-size: 400% 400%;
+  animation: gradient-shift 8s ease infinite;
+}
+
+@keyframes gradient-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* AI thinking pulse animation */
+.pulse-ai {
+  animation: pulse-ai-glow 2.5s ease-in-out infinite;
+}
+
+@keyframes pulse-ai-glow {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.4;
+  }
+}
+
+/* Floating animation for hero elements */
+.float-slow {
+  animation: float-slow 6s ease-in-out infinite;
+}
+
+@keyframes float-slow {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+/* Reveal animation for components */
+.animate-reveal {
+  animation: reveal 0.6s ease-out;
+}
+
+@keyframes reveal {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Smooth fade-in */
+.fade-in {
+  animation: fade-in 0.5s ease-out;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Glow effects */
+.glow-border-purple {
+  position: relative;
+  border: 1px solid transparent;
+  background-image: 
+    linear-gradient(rgba(2, 2, 2, 0.95), rgba(2, 2, 2, 0.95)),
+    linear-gradient(45deg, #a78bfa, #7c3aed, #a78bfa);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 0 20px rgba(167, 139, 250, 0.3);
+}
+
+.glow-border-cyan {
+  position: relative;
+  border: 1px solid transparent;
+  background-image: 
+    linear-gradient(rgba(2, 2, 2, 0.95), rgba(2, 2, 2, 0.95)),
+    linear-gradient(45deg, #06b6d4, #0891b2, #06b6d4);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 0 20px rgba(6, 182, 212, 0.2);
+}
+
+/* Custom scrollbar for webkit */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.02);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(167, 139, 250, 0.3);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(167, 139, 250, 0.5);
+}
+
+/* Utility classes */
+@layer components {
+  .premium-card {
+    @apply relative rounded-lg border border-white/10 bg-gradient-to-br from-white/5 to-white/[0.02] backdrop-blur-xl shadow-lg;
+  }
+
+  .premium-glass {
+    @apply rounded-lg border border-white/10 bg-white/[0.05] backdrop-blur-md shadow-sm;
+  }
+
+  .gradient-text {
+    @apply bg-gradient-to-r from-violet-400 via-cyan-400 to-violet-400 bg-clip-text text-transparent;
+  }
+
+  .glow-text {
+    @apply drop-shadow-[0_0_8px_rgba(167,139,250,0.5)];
+  }
+
+  .button-primary {
+    @apply relative px-6 py-2.5 rounded-lg font-medium text-white bg-gradient-to-r from-violet-600 to-purple-600 hover:from-violet-500 hover:to-purple-500 shadow-lg hover:shadow-violet-500/50 transition-all duration-300 border border-violet-400/20;
+  }
+
+  .button-secondary {
+    @apply relative px-6 py-2.5 rounded-lg font-medium text-white border border-white/20 bg-white/5 hover:bg-white/10 transition-all duration-300;
+  }
+
+  .input-premium {
+    @apply w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 text-white placeholder:text-white/40 focus:border-violet-500/50 focus:outline-none focus:ring-2 focus:ring-violet-500/20 transition-all duration-300 backdrop-blur-xl;
+  }
+}
