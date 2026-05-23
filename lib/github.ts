@@ -14,7 +14,8 @@ interface PRParsed {
  * Example: https://github.com/facebook/react/pull/12345
  */
 export function parsePRUrl(url: string): PRParsed {
-  const match = url.match(/github\.com\/([^/]+)\/([^/]+)\/pull\/(\d+)/);
+  const trimmedUrl = url.trim();
+  const match = trimmedUrl.match(/github\.com\/([^/]+)\/([^/]+)\/pull\/(\d+)/);
   if (!match) {
     throw new Error("Invalid GitHub PR URL format");
   }
