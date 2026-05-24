@@ -49,7 +49,7 @@ export function LoadingOverlay() {
       clearInterval(stepInterval);
       clearInterval(logInterval);
     };
-  }, [steps.length, simulatedLogs]);
+  }, [steps, simulatedLogs]);
 
   const progressVariants = {
     hidden: { opacity: 0, x: -20 },

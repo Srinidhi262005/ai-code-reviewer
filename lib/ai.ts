@@ -203,7 +203,7 @@ export async function analyzeCode(files: GitHubFile[]): Promise<AIReview> {
   const bugCount = allFindings.filter((f) => f.type === "bug").length;
   const securityCount = allFindings.filter((f) => f.type === "security").length;
   const perfCount = allFindings.filter((f) => f.type === "performance").length;
-  const smellCount = allFindings.filter((f) => f.type === "smell").length;
+  const smellCount = allFindings.filter((f) => f.type === "smell" || f.type === "bestpractice").length;
 
   const summary =
     `Found ${bugCount} bugs, ${securityCount} security issues, ` +
